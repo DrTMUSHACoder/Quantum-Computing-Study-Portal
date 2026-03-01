@@ -526,8 +526,6 @@
                 <li><a href="javascript:void(0)" onclick="app.navigate('forum')">Discussion Forum</a></li>
                 <li><a href="javascript:void(0)" onclick="app.navigate('contact')">Contact Us</a></li>
                 <li><a href="javascript:void(0)" onclick="app.navigate('login')">Login / Signup</a></li>
-                <li><a href="sitemap.html" target="_blank" style="color: var(--primary); font-weight: 700;">Full Sitemap
-                    Map ↗</a></li>
               </ul>
             </div>
             <div class="sitemap-col">
@@ -538,10 +536,6 @@
                 <li><a href="javascript:void(0)" onclick="app.navigate('week_intro', 3)">Week 3: Algorithms</a></li>
                 <li><a href="javascript:void(0)" onclick="app.navigate('week_intro', 4)">Week 4: Advanced Topics</a>
                 </li>
-                <li><a href="week1/simulator.html">Week 1: Quantum Simulator Map ↗</a></li>
-                <li><a href="week2/simulator.html">Week 2: Quantum Algorithm Map ↗</a></li>
-                <li><a href="week3/simulator.html">Week 3: Quantum Circuit Map ↗</a></li>
-                <li><a href="week4/simulator.html">Week 4: Advanced Simulator Map ↗</a></li>
               </ul>
             </div>
             <div class="sitemap-col">
@@ -1626,9 +1620,15 @@
               <a class="sidebar-item" onclick="app.navigate('home')" style="padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;">
                   <span>🏠 Portal Home</span>
               </a>
+              <a class="sidebar-item" onclick="app.navigate('dashboard')" style="padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;">
+                  <span>📊 Dashboard</span>
+              </a>
               <a class="sidebar-item" onclick="app.navigate('announcements')" style="padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 800; color: #f59e0b; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
                   <span>📢 Announcements</span>
                   <span style="background: #ef4444; color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 0.5rem; font-weight: 900; animation: pulse-gold 2s infinite;">NEW</span>
+              </a>
+              <a class="sidebar-item" onclick="app.navigate('logout')" style="padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700; color: #ef4444;">
+                  <span>🚪 Logout</span>
               </a>
           </div>
           <div style="font-size: 0.62rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin: 0 0.75rem 0.75rem 0.75rem; opacity: 0.5;">Curriculum Roadmap</div>
@@ -1805,13 +1805,11 @@
         if (this.user) {
           const userName = (this.user.name && this.user.name.includes('Dr.')) ? this.user.name : (this.user.name ? this.user.name.split(' ')[0] : 'User');
           items.push(`
-            <div style="display:flex; align-items:center; gap:0.4rem; border-left: 1px solid var(--glass-border); padding-left: 0.5rem; margin-left: 0.2rem;">
-                <div class="user-profile-pill" onclick="app.navigate('profile')" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+            <div style="display:flex; align-items:center; border-left: 1px solid var(--glass-border); padding-left: 0.8rem; margin-left: 0.2rem; flex-shrink: 0;">
+                <div class="user-profile-pill" onclick="app.navigate('profile')" style="padding: 0.45rem 1rem; font-size: 0.82rem; white-space: nowrap;">
                     ${this.user.avatar_url ? `<img src="${this.user.avatar_url}" style="width:16px; height:16px; border-radius:50%; border:1px solid #fff">` : '👤'} 
-                    <span>${userName}</span>
+                    <span style="white-space: nowrap;">${userName}</span>
                 </div>
-                <a href="javascript:void(0)" onclick="app.navigate('announcements')" class="announcement-nav-link" title="Latest Announcements">CAST</a>
-                <a href="javascript:void(0)" onclick="app.navigate('logout')" class="nav-btn" style="opacity: 0.7; font-size: 0.75rem; border: none !important; padding: 0.3rem 0.5rem;">Logout</a>
             </div>
           `);
         } else {
