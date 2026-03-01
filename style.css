@@ -251,8 +251,8 @@ nav {
 #nav-links-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex-shrink: 0;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
 }
 
 nav.scrolled {
@@ -332,10 +332,10 @@ nav::after {
 .nav-content {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
-    padding: 0 1.5rem;
+    gap: 1rem;
+    padding: 0 1rem;
 }
 
 .menu-toggle {
@@ -483,15 +483,17 @@ nav::after {
     color: #ffd700 !important;
     font-weight: 800 !important;
     text-decoration: none !important;
-    padding: 0.4rem 1.1rem !important;
+    padding: 0.4rem 0.8rem !important;
     border: 1px solid rgba(255, 215, 0, 0.4) !important;
-    border-radius: 20px !important;
-    font-size: 0.82rem !important;
-    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+    font-size: 0.75rem !important;
+    background: rgba(0, 0, 0, 0.3) !important;
     transition: all 0.2s ease !important;
     display: flex;
     align-items: center;
     white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .announcement-nav-link:hover {
@@ -518,7 +520,7 @@ nav::after {
 /* Theme Selector */
 .theme-selector {
     position: relative;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
 }
 
 .theme-btn {
@@ -636,20 +638,6 @@ nav::after {
     box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
 }
 
-.announcement-nav-link {
-    color: #fbbf24 !important;
-    /* Yellow-400 */
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 800;
-    padding: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.announcement-nav-link:hover {
-    opacity: 0.8;
-    text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
-}
 
 /* Layout */
 .app-container {

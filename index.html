@@ -1805,14 +1805,13 @@
         if (this.user) {
           const userName = (this.user.name && this.user.name.includes('Dr.')) ? this.user.name : (this.user.name ? this.user.name.split(' ')[0] : 'User');
           items.push(`
-            <div style="display:flex; align-items:center; gap:0.5rem; margin-left: 0.1rem;">
-                <div class="user-profile-pill" onclick="app.navigate('profile')">
-                    ${this.user.avatar_url ? `<img src="${this.user.avatar_url}" style="width:18px; height:18px; border-radius:50%; border:1px solid #fff">` : '👤'} 
+            <div style="display:flex; align-items:center; gap:0.4rem; border-left: 1px solid var(--glass-border); padding-left: 0.5rem; margin-left: 0.2rem;">
+                <div class="user-profile-pill" onclick="app.navigate('profile')" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+                    ${this.user.avatar_url ? `<img src="${this.user.avatar_url}" style="width:16px; height:16px; border-radius:50%; border:1px solid #fff">` : '👤'} 
                     <span>${userName}</span>
                 </div>
-                <a href="javascript:void(0)" onclick="app.navigate('logout')" class="nav-btn" style="opacity: 0.6; font-size: 0.8rem; border-color: transparent !important;">Logout</a>
-                <div class="nav-group-divider" style="height: 12px; opacity: 0.3;"></div>
-                <a href="javascript:void(0)" onclick="app.navigate('announcements')" class="announcement-nav-link">Announcement</a>
+                <a href="javascript:void(0)" onclick="app.navigate('announcements')" class="announcement-nav-link" title="Latest Announcements">CAST</a>
+                <a href="javascript:void(0)" onclick="app.navigate('logout')" class="nav-btn" style="opacity: 0.7; font-size: 0.75rem; border: none !important; padding: 0.3rem 0.5rem;">Logout</a>
             </div>
           `);
         } else {
